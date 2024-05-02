@@ -28,7 +28,7 @@ public class GameOfLife {
 
     }
 
-    public void InitializerBoard() {
+    public void initializerBoard() {
 
         Random random = new Random();
 
@@ -41,14 +41,14 @@ public class GameOfLife {
 
         // Distributes live cells randomly
         for (int aliveCellCount = 0; aliveCellCount < aliveCells; aliveCellCount++) {
-            int chooseRow = random.nextInt(rows);
-            int chooseCol = random.nextInt(cols);
+            int chosenRow = random.nextInt(rows);
+            int chosenCol = random.nextInt(cols);
 
-            if (board[chooseRow][chooseCol] == 0) {
-                board[chooseRow][chooseCol] = 1;
+            if (board[chosenRow][chosenCol] == 0) {
+                board[chosenRow][chosenCol] = 1;
             }
             else{
-                // If the choosen cell is already live, try again
+                // If the chosen cell is already live, try again
                 aliveCellCount--;
             }
         }
@@ -56,47 +56,27 @@ public class GameOfLife {
         draw();
     }
 
-    public void nextGeneration(){
+    public void nextGeneration() {
 
         int[][] nextBoard = new int[rows][cols];
 
         for (int m = 0; m < rows; m++) {
             for (int n = 0; n < cols; n++) {
 
-                int aliveNeighbours = 0;
-
-                for (int i = -1; i < 2; i++){
-                    int newRow = m + i;
-
-                    for (int j = -1; j < 2; j++){
-                        //int count = 0;
-
-                        int newCol = n + j;
-
-                        if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols){
-                            if (i == 0 && j == 0){
-                                continue;
-                            }
-                            else {
-                                aliveNeighbours += board[newRow][newCol];
-                            }
-
-                        }
-                    }
-                }
+                int aliveNeighbours = countAliveNeighbours(m, n);
 
                 // Cell dies by lonely or over population if it's alive or remains dead
-                if (aliveNeighbours < 2 || aliveNeighbours > 3){
+                if (aliveNeighbours < 2 || aliveNeighbours > 3)
                     nextBoard[m][n] = 0;
-                }
+
                 // A cell is born if it's dead or remains alive
-                else if (aliveNeighbours == 3) {
+                else if (aliveNeighbours == 3)
                     nextBoard[m][n] = 1;
-                }
+
                 // Remains in the same state
-                else {
+                else
                     nextBoard[m][n] = board[m][n];
-                }
+
             }
         }
 
@@ -104,6 +84,31 @@ public class GameOfLife {
         draw();
 
     }
+
+    private int countAliveNeighbours(int m, int n) {
+        int count = 0;
+
+        for (int i = -1; i < 2; i++) {
+            int newRow = m + i;
+
+            for (int j = -1; j < 2; j++) {
+                int newCol = n + j;
+
+                if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
+                    if (i == 0 && j == 0)
+                        continue;
+
+                    else
+                        count += board[newRow][newCol];
+
+
+                }
+            }
+        }
+
+        return count;
+    }
+
 
     private void draw() {
         // clear graphics

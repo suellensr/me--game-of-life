@@ -32,7 +32,7 @@ public class ScreenGame extends Application {
     public void start(Stage primaryStage) {
 
         VBox root = new VBox(10);
-        root.setAlignment(Pos.CENTER); // Centraliza verticalmente
+        root.setAlignment(Pos.CENTER);
         Scene scene = new Scene(root, width, height + 100);
         final Canvas canvas = new Canvas(width, height);
 
@@ -49,23 +49,23 @@ public class ScreenGame extends Application {
 
 
         if (rows > cols) {
-            cellSize = (int) Math.floor(height / rows);
+            cellSize = height / rows;
         }
         else {
-            cellSize = (int) Math.floor(width / cols);
+            cellSize = width / cols;
         }
 
         GraphicsContext graphics = canvas.getGraphicsContext2D();
 
         GameOfLife game = new GameOfLife(width, height, cellSize, rows, cols, aliveCells, graphics);
-        game.InitializerBoard();
+        game.initializerBoard();
 
         AnimationTimer runAnimation = new AnimationTimer() {
             private long lastUpdate = 0;
 
             @Override
             public void handle(long now) {
-                // only update once every second
+                // update every 0.5 seconds
                 if ((now - lastUpdate) >= TimeUnit.MILLISECONDS.toNanos(500)) {
                     game.nextGeneration();
                     lastUpdate = now;
@@ -73,7 +73,7 @@ public class ScreenGame extends Application {
             }
         };
 
-        reset.setOnAction(l -> game.InitializerBoard() );
+        reset.setOnAction(l -> game.initializerBoard() );
         run.setOnAction(  l -> runAnimation.start());
         step.setOnAction( l -> game.nextGeneration());
         stop.setOnAction( l -> runAnimation.stop());
