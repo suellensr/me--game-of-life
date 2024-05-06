@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ddcac69-527a-4203-bf98-1444c6390bde" name="Changes" comment="Refactor code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/challengeone/gameoflife/GameOfLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/challengeone/gameoflife/GameOfLife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/challengeone/gameoflife/ScreenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/challengeone/gameoflife/ScreenConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/challengeone/gameoflife/ScreenGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/challengeone/gameoflife/ScreenGame.java" afterDir="false" />
-    </list>
+    <list default="true" id="8ddcac69-527a-4203-bf98-1444c6390bde" name="Changes" comment="New refactor code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714411325377</updated>
       <workItem from="1714411326410" duration="47385000" />
-      <workItem from="1715019542191" duration="4605000" />
+      <workItem from="1715019542191" duration="5194000" />
     </task>
     <task id="LOCAL-00001" summary="All classes">
       <option name="closed" value="true" />
@@ -139,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714681969388</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="New refactor code">
+      <option name="closed" value="true" />
+      <created>1715029310548</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715029310548</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +151,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="All classes" />
     <MESSAGE value="Refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor code" />
+    <MESSAGE value="New refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="New refactor code" />
   </component>
 </project>
