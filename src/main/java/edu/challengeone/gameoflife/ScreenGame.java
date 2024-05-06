@@ -41,19 +41,17 @@ public class ScreenGame extends Application {
         Button run = new Button("Run");
         Button stop = new Button("Stop");
 
-        root.getChildren().addAll(canvas, new HBox(10, reset, step, run, stop));
+        HBox buttonBox = new HBox(10, reset, step, run, stop);
+        buttonBox.setAlignment(Pos.CENTER);
+
+        root.getChildren().addAll(canvas, buttonBox);
         primaryStage.setScene(scene);
         primaryStage.show();
 
-
-
-
-        if (rows > cols) {
+        if (rows > cols)
             cellSize = height / rows;
-        }
-        else {
+        else
             cellSize = width / cols;
-        }
 
         GraphicsContext graphics = canvas.getGraphicsContext2D();
 
@@ -73,12 +71,9 @@ public class ScreenGame extends Application {
             }
         };
 
-        reset.setOnAction(l -> game.initializerBoard() );
+        reset.setOnAction(l -> game.initializerBoard());
         run.setOnAction(  l -> runAnimation.start());
         step.setOnAction( l -> game.nextGeneration());
         stop.setOnAction( l -> runAnimation.stop());
     }
-
-
-
 }

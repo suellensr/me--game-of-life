@@ -22,15 +22,12 @@ public class ScreenConfig extends Application {
     @Override
     public void start(Stage primaryStage) {
         VBox configRoot = new VBox(10);
-        configRoot.setAlignment(Pos.CENTER); // Centraliza verticalmente
-
-
+        configRoot.setAlignment(Pos.CENTER);
 
         Scene configScene = new Scene(configRoot, CONFIG_WIDTH, CONFIG_HEIGHT);
 
         Label titleLabel = new Label("GAME OF LIFE");
         titleLabel.setStyle("-fx-font-size: 62px; -fx-text-fill: darkcyan;");
-
 
         Label rowsLabel = new Label("Enter the number of rows for the grid (10 to 50):");
         TextField rowsInput = new TextField();
@@ -43,7 +40,6 @@ public class ScreenConfig extends Application {
         Label aliveCellsLabel = new Label("Enter the number of cells that should start alive (30 to total cells):");
         TextField aliveCellsInput = new TextField();
         aliveCellsInput.setMaxWidth(80);
-
 
         Button playButton = new Button("Play");
         playButton.setOnAction(e -> {
@@ -59,8 +55,7 @@ public class ScreenConfig extends Application {
                     ScreenGame screenGame = new ScreenGame(rows, cols, aliveCells);
                     try {
                         screenGame.start(primaryStage);
-                    }
-                    catch (Exception ex) {
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
 
@@ -71,15 +66,13 @@ public class ScreenConfig extends Application {
                     alert.setContentText("The values must be within the specified range.");
                     alert.showAndWait();
                 }
-            }
-            catch (NumberFormatException ex) {
+            } catch (NumberFormatException ex) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Invalid input format. Please enter an integer value.");
                 alert.showAndWait();
             }
-
         });
 
         configRoot.getChildren().addAll(
