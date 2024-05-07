@@ -112,7 +112,7 @@ public class GameOfLife {
                     graphics.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
                     graphics.setFill(Color.DARKCYAN);
                     graphics.fillRect((i * cellSize) + 1, (j * cellSize) + 1, cellSize - 2, cellSize - 2);
-                }else {
+                } else {
                     graphics.setFill(Color.gray(0.5, 0.5));
                     graphics.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
                     graphics.setFill(Color.LIGHTCYAN);

@@ -72,8 +72,8 @@ public class ScreenGame extends Application {
         };
 
         reset.setOnAction(l -> game.initializerBoard());
-        run.setOnAction(  l -> runAnimation.start());
-        step.setOnAction( l -> game.nextGeneration());
-        stop.setOnAction( l -> runAnimation.stop());
+        run.setOnAction( l -> runAnimation.start());
+        step.setOnAction(l -> game.nextGeneration());
+        stop.setOnAction(l -> runAnimation.stop());
     }
 }
