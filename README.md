@@ -45,7 +45,7 @@ Este projeto é uma implementação do **Jogo da Vida de Conway** utilizando **J
 
 ## Como Executar
 
-1. Clone o repositório: `git clone <url-do-repositorio>`
+1. Clone o repositório: `git clone https://github.com/suellensr/me--game-of-life.git`
 2. Navegue até o diretório do projeto.
 3. Compile e execute a aplicação com um IDE compatível ou usando a linha de comando.
 
